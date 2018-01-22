@@ -18,7 +18,7 @@ const APP_ROUTES: Routes = [
     path: 'cursos', component: CursosComponent
   },
   {
-    path: 'cursos/:id', component: CursoDetalheComponent
+    path: 'curso/:id', component: CursoDetalheComponent
   }
 ];
 
