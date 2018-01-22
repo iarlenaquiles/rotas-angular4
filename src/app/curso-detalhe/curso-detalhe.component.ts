@@ -11,10 +11,14 @@ export class CursoDetalheComponent implements OnInit {
   id: string;
 
   constructor(private route: ActivatedRoute) {
-    this.id = this.route.snapshot.params['id'];
-   }
+    //this.id = this.route.snapshot.params['id'];
+  }
 
   ngOnInit() {
+    this.route.params.subscribe(
+      (params: any) => {
+        this.id = params['id'];
+    });
   }
 
 }
