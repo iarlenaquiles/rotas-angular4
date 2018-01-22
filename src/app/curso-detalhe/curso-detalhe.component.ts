@@ -10,8 +10,9 @@ import { CursosService } from './../cursos/cursos.service';
 })
 export class CursoDetalheComponent implements OnInit {
 
-  id: string;
+  id: number;
   inscricao: Subscription;
+  curso: any;
 
   constructor(private route: ActivatedRoute,
     private cursoService: CursosService) {
@@ -22,6 +23,8 @@ export class CursoDetalheComponent implements OnInit {
     this.inscricao = this.route.params.subscribe(
       (params: any) => {
         this.id = params['id'];
+
+        this.curso = this.cursoService.getCurso(this.id);
     });
   }
 
