@@ -23,4 +23,8 @@ export class CursoDetalheComponent implements OnInit {
     });
   }
 
+  ngOnDestroy() {
+    this.inscricao.unsubscribe();
+  }
+
 }
