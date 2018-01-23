@@ -19,8 +19,8 @@ export class AlunoDetalheComponent implements OnInit {
 
   ngOnInit() {
     this.inscricao = this.route.queryParams.subscribe(
-      (queryParams: any) => {
-        let id = queryParams['id'];
+      (params: any) => {
+        let id = params['id'];
 
         this.aluno = this.alunosService.getAluno(id);
       }
