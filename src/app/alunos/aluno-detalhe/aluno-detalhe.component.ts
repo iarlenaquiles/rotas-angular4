@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Subscription } from 'rxjs/Rx';
 import { AlunosService } from '../alunos.service';
+import { Aluno } from './../aluno';
 
 @Component({
   selector: 'app-aluno-detalhe',
@@ -12,7 +13,7 @@ import { AlunosService } from '../alunos.service';
 export class AlunoDetalheComponent implements OnInit {
 
   inscricao: Subscription;
-  aluno: any;
+  aluno: Aluno;
 
   constructor(private route: ActivatedRoute,
               private alunosService: AlunosService) { }
