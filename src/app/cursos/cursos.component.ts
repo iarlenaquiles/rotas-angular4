@@ -10,6 +10,8 @@ export class CursosComponent implements OnInit {
 
   cursos: any[];
 
+  pagina: number;
+
   constructor(private cursosService: CursosService) { }
 
   ngOnInit() {
