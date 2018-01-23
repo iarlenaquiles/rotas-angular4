@@ -34,4 +34,8 @@ export class CursosComponent implements OnInit {
     this.inscricao.unsubscribe();
   }
 
+  proximaPagina() {
+    this.pagina++;
+  }
+
 }
