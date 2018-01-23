@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { CursosService } from './cursos.service';
 
 @Component({
@@ -12,7 +14,8 @@ export class CursosComponent implements OnInit {
 
   pagina: number;
 
-  constructor(private cursosService: CursosService) { }
+  constructor(private cursosService: CursosService,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.cursos = this.cursosService.getCursos();
