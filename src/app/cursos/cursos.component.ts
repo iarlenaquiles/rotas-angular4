@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { CursosService } from './cursos.service';
 import { Subscription } from 'rxjs/Rx';
@@ -18,7 +18,8 @@ export class CursosComponent implements OnInit {
   inscricao: Subscription;
 
   constructor(private cursosService: CursosService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
     this.cursos = this.cursosService.getCursos();
@@ -36,6 +37,8 @@ export class CursosComponent implements OnInit {
 
   proximaPagina() {
     this.pagina++;
+    this.router.navigate(['/cursos'],
+        {queryParams: {'pagina': this.pagina}});
   }
 
 }
