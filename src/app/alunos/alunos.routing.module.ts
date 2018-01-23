@@ -10,13 +10,13 @@ const alunosRoutes: Routes = [
     path: 'alunos', component: AlunosComponent
   },
   {
+    path: 'alunos/novo', component: AlunoFormComponent
+  },
+  {
     path: 'alunos/:id', component: AlunoDetalheComponent
   },
   {
     path: 'alunos/:id/editar', component: AlunoFormComponent
-  },
-  {
-    path: 'alunos/novo', component: AlunoFormComponent
   }
 ];
 
