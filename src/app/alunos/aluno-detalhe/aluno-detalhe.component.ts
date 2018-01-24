@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AlunosModule } from './../alunos.module';
 
 import { Subscription } from 'rxjs/Rx';
 import { AlunosService } from '../alunos.service';
@@ -20,11 +21,20 @@ export class AlunoDetalheComponent implements OnInit {
               private alunosService: AlunosService) { }
 
   ngOnInit() {
-    this.inscricao = this.route.queryParams.subscribe(
-      (params: any) => {
-        let id = params['id'];
+    // this.inscricao = this.route.queryParams.subscribe(
+    //   (params: any) => {
+    //     let id = params['id'];
 
-        this.aluno = this.alunosService.getAluno(id);
+    //     this.aluno = this.alunosService.getAluno(id);
+    //   }
+    // );
+
+    console.log('ngOnInit: AlunoDetalheComponent');
+
+    this.inscricao = this.route.data.subscribe(
+      (info: {aluno: Aluno}) => {
+        console.log('Recebendo o obj Aluno do resolver');
+        this.aluno = info.aluno;
       }
     );
   }
