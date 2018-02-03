@@ -11,10 +11,10 @@ const cursosRoutes: Routes = [
     path: '', component: CursosComponent
   },
   {
-    path: ':id', component: CursoDetalheComponent
+    path: 'naoEncontrado', component: CursoNaoEncontradoComponent
   },
   {
-    path: 'naoEncontrado', component: CursoNaoEncontradoComponent
+    path: ':id', component: CursoDetalheComponent
   }
 ];
 
